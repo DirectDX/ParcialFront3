@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import Estilos from "../styles/Estilos.module.css";
 
 const Form = () => {
   const [usuario, setUsuario] = useState({
@@ -25,9 +26,10 @@ const Form = () => {
 
   return (
     <>
-      <form onSubmit={handleSumbit}>
-        <label>Nombre</label>
+      <form className={Estilos.form} onSubmit={handleSumbit}>
+        <label className={Estilos.labels}>Nombre</label>
         <input
+          className={Estilos.inputs}
           disabled={show}
           type="text"
           value={usuario.nombre}
@@ -35,8 +37,9 @@ const Form = () => {
             setUsuario({ ...usuario, nombre: event.target.value })
           }
         />
-        <label>Apellido</label>
+        <label className={Estilos.labels}>Apellido</label>
         <input
+          className={Estilos.inputs}
           type="text"
           value={usuario.apellido}
           disabled={show}
@@ -46,7 +49,7 @@ const Form = () => {
         />
         <button>Enviar</button>
       </form>
-      {error && <p>Por favor chequea que la información sea correcta</p>}
+      {error && <p style={{color: "red"}}>Por favor chequea que la información sea correcta</p>}
       {show && <Card usuario={usuario} />}
     </>
   );

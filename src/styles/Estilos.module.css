@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  padding: 20px;
+  color: black;
+  border-radius: 10px;
+}
+.inputs {
+  margin: 10px 0px;
+}
+
+.labels {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    margin: 10px;
+    padding : 10px;
+    background-color: green;
+    color: rgb(255, 255, 255);
+}
